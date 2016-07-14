@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Pay by Bank app button properties
+    -->
+
+    <!--
+        Pay by Bank app popup properties
+    -->
+    <!-- Generic properties -->
+    <dimen name="pbba_popup_header_title_margin_top">20dp</dimen>
+
+    <dimen name="pbba_popup_container_width">600dp</dimen>
+
+    <dimen name="pbba_popup_content_margin_horizontal">32dp</dimen>
+    <dimen name="pbba_popup_content_margin_vertical">24dp</dimen>
+
+    <dimen name="pbba_popup_vertical_separator_horizontal_margin_left">@dimen/pbba_popup_content_margin_horizontal</dimen>
+    <dimen name="pbba_popup_vertical_separator_horizontal_margin_right">@dimen/pbba_popup_content_margin_horizontal</dimen>
+
+    <!-- Error popup properties -->
+    <dimen name="pbba_popup_error_container_width">320dp</dimen>
+
+    <!-- MComm popup properties -->
+    <dimen name="pbba_popup_mcomm_open_banking_app_call_to_action_margin_top">16dp</dimen>
+    <dimen name="pbba_popup_mcomm_open_banking_app_call_to_action_margin_bottom">40dp</dimen>
+
+    <!-- EComm popup properties -->
+    <dimen name="pbba_popup_ecomm_title_text_font_size">18dp</dimen>
+    <dimen name="pbba_popup_ecomm_section_padding_left">10dp</dimen>
+    <dimen name="pbba_popup_ecomm_body_margin_top">20dp</dimen>
+    <dimen name="pbba_popup_ecomm_body_text_one_margin_top">24dp</dimen>
+    <dimen name="pbba_popup_ecomm_body_text_two_margin_top">20dp</dimen>
+    <dimen name="pbba_popup_ecomm_body_code_margin_top">28dp</dimen>
+    <dimen name="pbba_popup_ecomm_body_code_margin_bottom">32dp</dimen>
+    <dimen name="pbba_popup_ecomm_indicator_background_radius">2dp</dimen>
+    <dimen name="pbba_popup_ecomm_item_indicator_width">2dp</dimen>
+    <dimen name="pbba_popup_ecomm_item_indicator_margin_right">10dp</dimen>
+    <dimen name="pbba_popup_ecomm_item_padding_top_bottom">2dp</dimen>
+    <dimen name="pbba_popup_ecomm_item_four_space">10dp</dimen>
+
+    <!-- 'What is Pay by Bank app?' section properties -->
+    <dimen name="pbba_popup_more_info_height">44dp</dimen>
+
+</resources>

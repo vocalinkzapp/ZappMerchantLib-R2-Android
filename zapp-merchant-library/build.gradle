@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'jacoco'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '23.0.3'
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 24
+        versionCode 1000
+        versionName '1.0.0'
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    //noinspection GroovyAssignabilityCheck
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+
+}
+
+//noinspection GroovyUntypedAccess,GroovyAssignabilityCheck
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:support-annotations:24.0.0'
+    compile 'com.android.support:support-v4:24.0.0'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+}

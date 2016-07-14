@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pay by Bank app button style -->
+    <style name="PBBAButton" />
+
+    <style name="PBBAButton.Container">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/pbba_button_selector</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="PBBAButton.Text">
+        <item name="android:textColor">@color/pbba_button_foreground_color</item>
+        <item name="android:textSize">@dimen/pbba_button_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="fontName">@string/pbba_button_font</item>
+    </style>
+
+    <style name="PBBAButton.Progress">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Pay by Bank app popup style -->
+    <style name="PBBAPopup" />
+
+    <style name="PBBAPopup.Screen">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/PBBAPopup.ScreenAnimation</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="PBBAPopup.ScreenAnimation">
+        <item name="android:windowEnterAnimation">@anim/pbba_popup_in</item>
+        <item name="android:windowExitAnimation">@anim/pbba_popup_out</item>
+    </style>
+
+    <style name="PBBAPopup.Container">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:minWidth">@dimen/pbba_popup_container_width</item>
+        <item name="android:layout_width">@dimen/pbba_popup_container_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/pbba_popup_background</item>
+    </style>
+
+    <style name="PBBAPopup.Container.Error">
+        <item name="android:minWidth">@dimen/pbba_popup_error_container_width</item>
+        <item name="android:layout_width">@dimen/pbba_popup_error_container_width</item>
+    </style>
+
+    <style name="PBBAPopup.Content">
+        <item name="android:minWidth">@dimen/pbba_popup_container_width</item>
+        <item name="android:layout_width">@dimen/pbba_popup_container_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:paddingTop">@dimen/pbba_popup_container_padding_top</item>
+        <item name="android:paddingRight">@dimen/pbba_popup_container_padding_right</item>
+        <item name="android:paddingBottom">@dimen/pbba_popup_container_padding_bottom</item>
+        <item name="android:paddingLeft">@dimen/pbba_popup_container_padding_left</item>
+    </style>
+
+    <style name="PBBAPopup.Content.Error">
+        <item name="android:minWidth">@dimen/pbba_popup_error_container_width</item>
+        <item name="android:layout_width">@dimen/pbba_popup_error_container_width</item>
+    </style>
+
+    <style name="PBBAPopup.Close">
+        <item name="android:padding">@dimen/pbba_popup_close_padding</item>
+    </style>
+
+    <style name="PBBAPopup.Text">
+        <item name="android:textColor">@color/pbba_popup_foreground_color</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="PBBAPopup.Text.Title">
+        <item name="android:textSize">@dimen/pbba_popup_title_text_font_size</item>
+        <item name="fontName">@string/pbba_popup_semibold_font</item>
+    </style>
+
+    <style name="PBBAPopup.Text.Body">
+        <item name="android:textSize">@dimen/pbba_popup_body_text_font_size</item>
+        <item name="fontName">@string/pbba_popup_regular_font</item>
+    </style>
+
+    <style name="PBBAPopup.Text.Body.Bold">
+        <item name="fontName">@string/pbba_popup_bold_font</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PBBAPopup.Text.MoreInfo">
+        <item name="android:textSize">@dimen/pbba_popup_more_info_text_font_size</item>
+        <item name="fontName">@string/pbba_popup_semibold_font</item>
+    </style>
+
+    <style name="PBBAPopup.EComm" />
+
+    <style name="PBBAPopup.EComm.Text">
+        <item name="android:textColor">@color/pbba_popup_foreground_color</item>
+    </style>
+
+    <style name="PBBAPopup.EComm.Text.Title">
+        <item name="android:textSize">@dimen/pbba_popup_ecomm_title_text_font_size</item>
+        <item name="fontName">@string/pbba_popup_regular_font</item>
+    </style>
+
+    <style name="PBBAPopup.EComm.Item">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingTop">@dimen/pbba_popup_ecomm_item_padding_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/pbba_popup_ecomm_item_padding_top_bottom</item>
+    </style>
+
+    <style name="PBBAPopup.EComm.Item.Indicator">
+        <item name="android:layout_width">@dimen/pbba_popup_ecomm_item_indicator_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/pbba_popup_ecomm_item_indicator_margin_right</item>
+    </style>
+
+    <!-- Pay by Bank app Code styles -->
+
+    <style name="PBBACode" />
+
+    <style name="PBBACode.Group">
+        <item name="android:layout_width">@dimen/pbba_popup_code_group_width</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">@dimen/pbba_popup_code_group_height</item>
+        <item name="android:background">@drawable/pbba_popup_code_container_background</item>
+    </style>
+
+    <style name="PBBACode.Value">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/pbba_code_text_item_size</item>
+        <item name="android:textColor">@color/pbba_code_text_color</item>
+        <item name="fontName">@string/pbba_popup_semibold_font</item>
+    </style>
+
+    <style name="PBBACode.VerticalSeparator">
+        <item name="android:background">@color/pbba_code_separator_color</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+</resources>

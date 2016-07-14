@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pbba="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/pbba_button_get_code"
+        style="@style/PBBAButton.Container"
+        android:layout_width="@dimen/pbba_button_width"
+        android:layout_height="@dimen/pbba_button_height"
+        android:layout_gravity="center"
+        android:contentDescription="@string/pbba_accessibility_get_code_button"
+        android:orientation="horizontal">
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/pbba_button_get_text"
+            style="@style/PBBAButton.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pbba_button_text_get_code_pre"
+            pbba:fontName="@string/pbba_button_font"
+            tools:ignore="UnusedIds" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/progress"
+            style="@style/PBBAButton.Progress"
+            android:src="@drawable/pbba_symbol_icon"
+            android:tint="@color/pbba_button_foreground_color" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/pbba_button_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/pbba_button_code_textimage_margin_left"
+            android:src="@drawable/pbba_code_textimage"
+            android:tint="@color/pbba_button_foreground_color"
+            tools:ignore="UnusedIds" />
+
+    </LinearLayout>
+
+</merge>

@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <item name="pbba_popup_container" type="id" tools:ignore="UnusedIds" />
+    <item name="pbba_popup_header" type="id" />
+</resources>

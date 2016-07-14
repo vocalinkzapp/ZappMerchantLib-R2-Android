@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pbba_popup_container"
+    style="@style/PBBAPopup.Container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="false"
+    tools:ignore="UnusedIds">
+
+        <RelativeLayout
+            android:id="@+id/pbba_popup_content"
+            style="@style/PBBAPopup.Content"
+            tools:ignore="UnusedIds">
+
+            <include layout="@layout/pbba_popup_section_header" />
+
+            <LinearLayout
+                android:id="@+id/pbba_ecomm_popup_body_no_bank_app_messages"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pbba_popup_header"
+                android:layout_marginLeft="@dimen/pbba_popup_content_margin_horizontal"
+                android:layout_marginRight="@dimen/pbba_popup_content_margin_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                tools:showIn="@layout/pbba_popup_fragment_ecomm"
+                tools:ignore="InconsistentLayout">
+
+                <com.zapp.library.merchant.ui.view.CustomTextView
+                    style="@style/PBBAPopup.Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/pbba_popup_ecomm_body_text_one_margin_top"
+                    android:text="@string/pbba_popup_no_bank_app_message" />
+
+                <com.zapp.library.merchant.ui.view.CustomTextView
+                    style="@style/PBBAPopup.Text.Body.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pbba_popup_ecomm_body_text_two_margin_top"
+                    android:text="@string/pbba_popup_submit_code_title"
+                    android:textSize="@dimen/pbba_popup_body_text_font_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pbba_ecomm_popup_body_no_bank_app_messages"
+                android:layout_marginLeft="@dimen/pbba_popup_content_margin_horizontal"
+                android:layout_marginRight="@dimen/pbba_popup_content_margin_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/pbba_popup_section_code_body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/pbba_popup_ecomm_body_code_margin_bottom"
+                    android:layout_marginTop="@dimen/pbba_popup_ecomm_body_code_margin_top" />
+
+                <include
+                    layout="@layout/pbba_popup_section_what_is_pay_by_bank_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+
+</ScrollView>

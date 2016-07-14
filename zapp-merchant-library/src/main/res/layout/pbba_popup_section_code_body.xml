@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pbba="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/pbba_popup_ecomm_body_margin_top"
+    android:orientation="vertical"
+    tools:showIn="@layout/pbba_popup_fragment_ecomm">
+
+    <LinearLayout
+        style="@style/PBBAPopup.EComm.Item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            style="@style/PBBAPopup.EComm.Item.Indicator"
+            android:background="@drawable/pbba_popup_ecom_indicator_one_background" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/pbba_popup_ecom_item_one_text"
+            style="@style/PBBAPopup.Text.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            pbba:htmlText="@string/pbba_popup_ecomm_item_one_text"
+            tools:text="[Pick] up your phone or tablet"
+            tools:ignore="UnusedIds" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/PBBAPopup.EComm.Item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            style="@style/PBBAPopup.EComm.Item.Indicator"
+            android:background="@color/pbba_popup_ecomm_indicator_two_color" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/pbba_popup_ecom_item_two_text"
+            style="@style/PBBAPopup.Text.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            pbba:htmlText="@string/pbba_popup_ecomm_item_two_text"
+            tools:text="[Log in] to your mobile banking app"
+            tools:ignore="UnusedIds" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/PBBAPopup.EComm.Item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            style="@style/PBBAPopup.EComm.Item.Indicator"
+            android:background="@color/pbba_popup_ecomm_indicator_three_color" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/pbba_popup_ecom_item_three_text"
+            style="@style/PBBAPopup.Text.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            pbba:htmlText="@string/pbba_popup_ecomm_item_three_text"
+            tools:text="[Select] Pay by Bank app"
+            tools:ignore="UnusedIds" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/PBBAPopup.EComm.Item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            style="@style/PBBAPopup.EComm.Item.Indicator"
+            android:layout_height="match_parent"
+            android:background="@drawable/pbba_popup_ecom_indicator_four_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pbba_popup_ecomm_item_four_space"
+                android:gravity="center_vertical|left"
+                android:orientation="horizontal">
+
+                <com.zapp.library.merchant.ui.view.CustomTextView
+                    android:id="@+id/pbba_popup_ecom_item_four_text_one"
+                    style="@style/PBBAPopup.Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    pbba:htmlText="@string/pbba_popup_ecomm_item_four_text_one"
+                    tools:text="[Enter] the"
+                    tools:ignore="UnusedIds" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/pbba_popup_ecom_item_icon_symbol"
+                    android:layout_width="@dimen/pbba_popup_ecomm_item_icon_symbol_width"
+                    android:layout_height="@dimen/pbba_popup_ecomm_item_icon_symbol_height"
+                    android:layout_marginLeft="@dimen/pbba_popup_ecomm_item_icon_symbol_margin_left"
+                    android:src="@drawable/pbba_symbol_icon"
+                    android:tint="@color/pbba_popup_foreground_color"
+                    tools:ignore="UnusedIds" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/pbba_popup_ecom_item_code_textimage"
+                    android:layout_width="@dimen/pbba_popup_ecomm_item_code_textimage_width"
+                    android:layout_height="@dimen/pbba_popup_ecomm_item_code_textimage_height"
+                    android:layout_marginLeft="@dimen/pbba_popup_ecomm_item_code_textimage_margin_left"
+                    android:layout_marginRight="@dimen/pbba_popup_ecomm_item_code_textimage_margin_right"
+                    android:src="@drawable/pbba_code_textimage"
+                    android:tint="@color/pbba_popup_foreground_color"
+                    tools:ignore="UnusedIds" />
+
+                <com.zapp.library.merchant.ui.view.CustomTextView
+                    android:id="@+id/pbba_popup_ecom_item_four_text_two"
+                    style="@style/PBBAPopup.Text.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    pbba:htmlText="@string/pbba_popup_ecomm_item_four_text_two"
+                    tools:text=" below"
+                    tools:ignore="UnusedIds" />
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/pbba_popup_section_code_letters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

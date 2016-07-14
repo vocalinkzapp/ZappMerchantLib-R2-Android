@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/pbba_popup_header"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/pbba_accessibility_dialog_title"
+    tools:showIn="@layout/pbba_popup_fragment_ecomm">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/pbba_popup_close"
+        style="@style/PBBAPopup.Close"
+        android:contentDescription="@string/pbba_accessibility_close_popup_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/pbba_popup_close"
+        android:tint="@color/pbba_popup_foreground_color" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/pbba_popup_pay_by_bank_app_logo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/pbba_popup_header_title_margin_top"
+        android:src="@drawable/pbba_popup_pay_by_bank_app_textimage"
+        android:tint="@color/pbba_popup_foreground_color"
+        tools:ignore="UnusedIds" />
+
+</RelativeLayout>

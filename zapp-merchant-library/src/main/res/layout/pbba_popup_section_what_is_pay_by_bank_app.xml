@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pbba_link_what_is_pay_by_bank_app"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:ignore="UnusedIds">
+
+    <View
+        android:id="@+id/pbba_popup_what_is_pay_by_bank_app_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:gravity="center"
+        android:background="@color/pbba_popup_separator_color"
+        tools:ignore="UnusedIds" />
+
+    <com.zapp.library.merchant.ui.view.CustomTextView
+        android:id="@+id/pbba_popup_what_is_pay_by_bank_app_text"
+        style="@style/PBBAPopup.Text.MoreInfo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pbba_popup_more_info_height"
+        android:text="@string/pbba_popup_what_is_pay_by_bank_app"
+        android:gravity="center"
+        tools:ignore="UnusedIds" />
+</LinearLayout>

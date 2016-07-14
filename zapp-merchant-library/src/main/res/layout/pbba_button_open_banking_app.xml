@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout android:id="@+id/pbba_button_open_banking_app"
+        style="@style/PBBAButton.Container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:contentDescription="@string/pbba_accessibility_open_banking_app"
+        android:layout_width="@dimen/pbba_button_width"
+        android:layout_height="@dimen/pbba_button_height">
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/pbba_button_open_banking_app_text"
+            style="@style/PBBAButton.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pbba_button_text_open_banking_app" />
+
+    </FrameLayout>
+</merge>

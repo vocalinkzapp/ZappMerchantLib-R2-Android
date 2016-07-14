@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PBBAButton">
+        <attr name="message_type" format="enum">
+            <enum name="payByBankApp" value="0" />
+            <enum name="getCode" value="1" />
+        </attr>
+        <attr name="layout_id" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="fontName" format="string" />
+        <attr name="htmlText" format="string" />
+    </declare-styleable>
+
+</resources>

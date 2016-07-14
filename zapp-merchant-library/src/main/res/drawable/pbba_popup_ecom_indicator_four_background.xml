@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners
+        android:bottomLeftRadius="@dimen/pbba_popup_ecomm_indicator_background_radius"
+        android:bottomRightRadius="@dimen/pbba_popup_ecomm_indicator_background_radius"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp" />
+
+    <solid android:color="@color/pbba_popup_ecomm_indicator_four_color" />
+</shape>

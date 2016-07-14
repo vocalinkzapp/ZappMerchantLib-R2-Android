@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Font configuration for Pay by Bank app logo (the Panton-Bold.otf texts parts of the buttons will be images) -->
+
+    <!-- Font configuration for Pay by Bank app popups -->
+
+    <!-- Pay by Bank app button texts -->
+
+    <!-- Pay by Bank app popup texts -->
+    <string name="pbba_popup_pay_with_another_device_title">Pay on another device</string>
+    <string name="pbba_popup_submit_code_title">Follow the steps on the right to complete this purchase on another device</string>
+
+    <!-- Error popup -->
+
+</resources>

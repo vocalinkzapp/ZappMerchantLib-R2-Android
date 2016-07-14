@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/pbba_popup_code_container"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        style="@style/PBBACode.Group"
+        android:layout_marginRight="@dimen/pbba_popup_code_group_margin_left_right">
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/code_value_1"
+            style="@style/PBBACode.Value"
+            tools:text="Z" />
+
+        <View style="@style/PBBACode.VerticalSeparator" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/code_value_2"
+            style="@style/PBBACode.Value"
+            tools:text="P" />
+
+        <View style="@style/PBBACode.VerticalSeparator" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/code_value_3"
+            style="@style/PBBACode.Value"
+            tools:text="P" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/PBBACode.Group"
+        android:layout_marginLeft="@dimen/pbba_popup_code_group_margin_left_right">
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/code_value_4"
+            style="@style/PBBACode.Value"
+            tools:text="B" />
+
+        <View style="@style/PBBACode.VerticalSeparator" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/code_value_5"
+            style="@style/PBBACode.Value"
+            tools:text="R" />
+
+        <View style="@style/PBBACode.VerticalSeparator" />
+
+        <com.zapp.library.merchant.ui.view.CustomTextView
+            android:id="@+id/code_value_6"
+            style="@style/PBBACode.Value"
+            tools:text="N" />
+    </LinearLayout>
+</LinearLayout>

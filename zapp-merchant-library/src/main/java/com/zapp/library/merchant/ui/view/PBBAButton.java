@@ -171,7 +171,6 @@ public class PBBAButton extends RelativeLayout implements View.OnClickListener {
     @Override
     public void onClick(final View v) {
         setEnabled(false);
-        postDelayed(mAutoReEnableWorker, AUTO_RE_ENABLE_TIMEOUT);
         if (mClickListener != null) {
             mClickListener.onClick(this);
         }
@@ -185,6 +184,7 @@ public class PBBAButton extends RelativeLayout implements View.OnClickListener {
             stopAnimation();
         } else {
             startAnimation();
+            postDelayed(mAutoReEnableWorker, AUTO_RE_ENABLE_TIMEOUT);
         }
         mButtonContainer.setEnabled(enabled);
     }

@@ -143,11 +143,18 @@ public final class PBBAAppUtils {
             throw new IllegalArgumentException("callback == null");
         }
 
+        final FragmentManager fragmentManager = activity.getSupportFragmentManager();
+        final PBBAPopup fragment = (PBBAPopup) fragmentManager.findFragmentByTag(PBBAPopup.TAG);
+
         final boolean hasBankApp = isCFIAppAvailable(activity);
         if (hasBankApp) {
             final boolean openBankAppAutomatically = PBBALibraryUtils.isOpenBankingAppButtonClicked(activity);
 
             if (openBankAppAutomatically) {
+                //close any open PBBA popup (e.g. error popup was displayed due to network error and retry request was successful with auto bank App open enabled)
+                if (fragment != null) {
+                    fragmentManager.beginTransaction().remove(fragment).commit();
+                }
                 openBankingApp(activity, secureToken);
                 return;
             }
@@ -155,9 +162,6 @@ public final class PBBAAppUtils {
             //disable auto bank opening in case of no PBBA enabled App installed (or has been uninstalled)
             PBBALibraryUtils.setOpenBankingAppButtonClicked(activity, false);
         }
-
-        final FragmentManager fragmentManager = activity.getSupportFragmentManager();
-        final PBBAPopup fragment = (PBBAPopup) fragmentManager.findFragmentByTag(PBBAPopup.TAG);
 
         if (fragment instanceof PBBAPopupFragment) {
             final PBBAPopupFragment popupFragment = (PBBAPopupFragment) fragment;

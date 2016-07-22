@@ -39,6 +39,7 @@ import android.text.TextUtils;
  * @author msagi
  * @since 1.0.0
  */
+@SuppressWarnings("CyclicClassDependency")
 public final class PBBAAppUtils {
 
     /**
@@ -121,7 +122,7 @@ public final class PBBAAppUtils {
      * @see #dismissPBBAPopup(FragmentActivity)
      * @see #setPBBAPopupCallback(FragmentActivity, PBBAPopupCallback)
      */
-    @SuppressWarnings({"FeatureEnvy", "OverlyComplexMethod"})
+    @SuppressWarnings({"FeatureEnvy", "OverlyComplexMethod", "OverlyLongMethod", "ElementOnlyUsedFromTestCode"})
     public static void showPBBAPopup(@NonNull final FragmentActivity activity, @NonNull final String secureToken, @NonNull final String brn,
             @NonNull final PBBAPopupCallback callback) {
 
@@ -196,6 +197,7 @@ public final class PBBAAppUtils {
      * @see #dismissPBBAPopup(FragmentActivity)
      * @see #setPBBAPopupCallback(FragmentActivity, PBBAPopupCallback)
      */
+    @SuppressWarnings("ElementOnlyUsedFromTestCode")
     public static void showPBBAErrorPopup(@NonNull final FragmentActivity activity, @Nullable String errorCode, @Nullable String errorTitle,
             @NonNull final String errorMessage, @NonNull final PBBAPopupCallback callback) {
 
@@ -265,7 +267,7 @@ public final class PBBAAppUtils {
      * @see #showPBBAPopup(FragmentActivity, String, String, PBBAPopupCallback)
      * @see #showPBBAErrorPopup(FragmentActivity, String, String, String, PBBAPopupCallback)
      */
-    @SuppressWarnings("BooleanMethodNameMustStartWithQuestion")
+    @SuppressWarnings({"BooleanMethodNameMustStartWithQuestion", "ElementOnlyUsedFromTestCode"})
     public static boolean dismissPBBAPopup(@NonNull final FragmentActivity activity) {
 
         verifyActivity(activity);

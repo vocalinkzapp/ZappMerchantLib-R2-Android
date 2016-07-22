@@ -12,7 +12,6 @@
     <string name="pbba_button_text_open_banking_app">Open banking app</string>
     <string name="pbba_button_text_open_banking_app_co_branded">Open Pingit</string>
     <string name="pbba_button_text_get_code_pre">Get\u0020\u0020</string>
-    <string name="pbba_button_text_pay_by_bank_app">\u0020Pay by Bank app</string>
 
     <!-- Pay by Bank app popup texts -->
     <string name="pbba_popup_what_is_pay_by_bank_app">What is Pay by Bank app? \u2192</string>
@@ -31,22 +30,8 @@
     <string name="pbba_popup_ecomm_item_four_text_one"><![CDATA[<b>Enter</b> the]]></string>
     <string name="pbba_popup_ecomm_item_four_text_two">\u0020below</string>
 
-    <!-- Error popup -->
     <string name="pbba_popup_error_generic_title">There has been a problem</string>
-    <string name="pbba_popup_error_expired_title">Payment request expired</string>
     <string name="pbba_popup_error_generic_message">Something went wrong. Please try again!</string>
-    <!-- ECOMM errors -->
-    <string name="pbba_popup_error_ecomm_generic_message">We were unable to generate a payment request at this time. Tap on the button below to try again\n(A10.3.2).</string>
-    <string name="pbba_popup_error_ecomm_expired_message">Tap on the button below to try again\n(A10.3.1).</string>
-    <!-- FIRST_TIME errors -->
-    <string name="pbba_popup_error_first_time_generic_message">We were unable to generate a payment request at this time. Tap on the button below to try again\n(A9.3.2/A10.3.2).</string>
-    <string name="pbba_popup_error_first_time_expired_message">Tap on the button below to try again\n(A9.3.1/A10.3.1).</string>
-    <!-- MCOMM errors -->
-    <string name="pbba_popup_error_mcomm_generic_message">We were unable to generate a payment request at this time. Tap on the button below to try again\n(A9.3.2).</string>
-    <string name="pbba_popup_error_mcomm_expired_message">Tap on the button below to try again\n(A9.3.1).</string>
-
-    <string name="default_cfi_app_title">banking app</string>
-
 
     <!-- Accessibility -->
     <string name="pbba_accessibility_dialog_title">Pay by Bank app dialog</string>

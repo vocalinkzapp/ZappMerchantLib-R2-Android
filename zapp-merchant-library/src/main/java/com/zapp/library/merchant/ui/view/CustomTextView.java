@@ -17,6 +17,7 @@ package com.zapp.library.merchant.ui.view;
 
 import com.zapp.library.merchant.R;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
@@ -73,12 +74,15 @@ public class CustomTextView extends TextView {
      * @param context The context to use.
      * @param attrs   The attribute set to use.
      */
+    @TargetApi(24)
     private void init(final Context context, final AttributeSet attrs) {
         final TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomTextView, 0, 0);
 
         try {
             final String fontName = a.getString(R.styleable.CustomTextView_fontName);
-            applyTypeface(context, fontName);
+            final Typeface customFont = Typeface.createFromAsset(context.getAssets(), fontName);
+            setTypeface(customFont);
+
             final String htmlText = a.getString(R.styleable.CustomTextView_htmlText);
             if (!TextUtils.isEmpty(htmlText)) {
 
@@ -92,16 +96,5 @@ public class CustomTextView extends TextView {
         } finally {
             a.recycle();
         }
-    }
-
-    /**
-     * Apply type face to this custom text view.
-     *
-     * @param context  The context to use.
-     * @param fontName The font name to use.
-     */
-    private void applyTypeface(final Context context, final String fontName) {
-        final Typeface customFont = Typeface.createFromAsset(context.getAssets(), fontName);
-        setTypeface(customFont);
     }
 }

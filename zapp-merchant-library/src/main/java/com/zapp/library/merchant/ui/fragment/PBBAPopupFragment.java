@@ -40,6 +40,7 @@ import android.widget.TextView;
  * @author msagi
  * @since 1.0.0
  */
+@SuppressWarnings("CyclicClassDependency")
 public final class PBBAPopupFragment extends PBBAPopup {
 
     /**
@@ -157,7 +158,7 @@ public final class PBBAPopupFragment extends PBBAPopup {
                 break;
             default:
                 //nothing to do here as input validation happens during configuration file loading
-                Log.w(PBBALibraryUtils.PBBA_LOG_TAG, "Unknown Pay by Bank app theme configuration: theme: " + pbbaTheme);
+                Log.w(PBBALibraryUtils.PBBA_LOG_TAG, String.format("Unknown Pay by Bank app theme configuration: theme: %d", pbbaTheme));
                 break;
         }
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/pbba_popup_container"
+<ScrollView android:id="@+id/pbba_popup_container"
     style="@style/PBBAPopup.Container.Error"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="false"
     tools:ignore="UnusedIds">
 
     <RelativeLayout
@@ -71,4 +72,4 @@
                 android:layout_marginTop="@dimen/pbba_popup_error_more_info_vertical_margin_top" />
         </LinearLayout>
     </RelativeLayout>
-</FrameLayout>
+</ScrollView>

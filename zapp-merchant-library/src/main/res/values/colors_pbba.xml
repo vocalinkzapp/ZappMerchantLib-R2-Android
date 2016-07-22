@@ -7,7 +7,6 @@
     <color name="pbba_button_pressed_background_color">#FFB48E</color>
 
     <!-- Pay by Bank app popup colour properties -->
-    <color name="pbba_popup_screen_background_color">#D9303030</color>
     <color name="pbba_popup_border_color">@color/pbba_button_background_color</color>
     <color name="pbba_popup_background_color">#ffffff</color>
     <color name="pbba_popup_foreground_color">#303030</color>

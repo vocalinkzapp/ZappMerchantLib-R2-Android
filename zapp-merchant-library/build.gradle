@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 24
-        versionCode 1000
-        versionName '1.0.0'
+        versionCode 1002
+        versionName '1.0.2'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -28,9 +28,9 @@ android {
 
 //noinspection GroovyUntypedAccess,GroovyAssignabilityCheck
 dependencies {
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:support-annotations:24.0.0'
-    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.1.0'
+    compile 'com.android.support:support-annotations:24.1.0'
+    compile 'com.android.support:support-v4:24.1.0'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'

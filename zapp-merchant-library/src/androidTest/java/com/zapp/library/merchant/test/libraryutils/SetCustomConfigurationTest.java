@@ -20,8 +20,6 @@ import com.zapp.library.merchant.util.PBBALibraryUtils;
 
 import junit.framework.Assert;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,12 +38,9 @@ import android.support.test.runner.AndroidJUnit4;
 @SmallTest
 public class SetCustomConfigurationTest {
 
+    @SuppressWarnings("PublicField")
     @Rule
     public ActivityTestRule<TestActivity> mActivityTestRule = new ActivityTestRule<>(TestActivity.class, /* initialTouchMode */ true, /* launchActivity */ true);
-
-    @Before
-    public void setUp() {
-    }
 
     @Test
     public void testSetCustomConfigurationNulls() throws Exception {
@@ -54,9 +49,5 @@ public class SetCustomConfigurationTest {
         PBBALibraryUtils.setCustomConfiguration(/* properties */ null);
         int pbbaTheme2 = PBBALibraryUtils.getPbbaTheme(activity);
         Assert.assertEquals(pbbaTheme, pbbaTheme2);
-    }
-
-    @After
-    public void tearDown() {
     }
 }

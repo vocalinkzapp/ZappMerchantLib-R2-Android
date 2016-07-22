@@ -91,7 +91,7 @@ public final class PBBALibraryUtils {
      *
      * @param properties The custom configuration to use.
      */
-    @SuppressWarnings("MethodMayBeSynchronized")
+    @SuppressWarnings({"MethodMayBeSynchronized", "ElementOnlyUsedFromTestCode"})
     public static void setCustomConfiguration(@NonNull final Properties properties) {
         synchronized (PBBALibraryUtils.class) {
             //noinspection ConstantConditions

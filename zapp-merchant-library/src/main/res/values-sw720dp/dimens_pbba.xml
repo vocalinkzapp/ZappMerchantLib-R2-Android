@@ -19,16 +19,12 @@
     <dimen name="pbba_popup_vertical_separator_horizontal_margin_left">@dimen/pbba_popup_content_margin_horizontal</dimen>
     <dimen name="pbba_popup_vertical_separator_horizontal_margin_right">@dimen/pbba_popup_content_margin_horizontal</dimen>
 
-    <!-- Error popup properties -->
-    <dimen name="pbba_popup_error_container_width">320dp</dimen>
-
     <!-- MComm popup properties -->
     <dimen name="pbba_popup_mcomm_open_banking_app_call_to_action_margin_top">16dp</dimen>
     <dimen name="pbba_popup_mcomm_open_banking_app_call_to_action_margin_bottom">40dp</dimen>
 
     <!-- EComm popup properties -->
-    <dimen name="pbba_popup_ecomm_title_text_font_size">22dp</dimen>
-    <dimen name="pbba_popup_ecomm_section_padding_left">12dp</dimen>
+    <dimen name="pbba_popup_ecomm_title_text_font_size">22sp</dimen>
     <dimen name="pbba_popup_ecomm_body_margin_top">25dp</dimen>
     <dimen name="pbba_popup_ecomm_body_text_one_margin_top">30dp</dimen>
     <dimen name="pbba_popup_ecomm_body_text_two_margin_top">25dp</dimen>

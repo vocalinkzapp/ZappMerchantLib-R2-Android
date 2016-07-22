@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pbba_popup_container"
+<ScrollView android:id="@+id/pbba_popup_container"
     style="@style/PBBAPopup.Container"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="false"
     tools:ignore="UnusedIds">
 
@@ -11,7 +11,9 @@
         style="@style/PBBAPopup.Content"
         tools:ignore="UnusedIds">
 
-        <include layout="@layout/pbba_popup_section_header" />
+        <include
+            android:id="@id/pbba_popup_header"
+            layout="@layout/pbba_popup_section_header" />
 
         <LinearLayout
             android:layout_width="match_parent"

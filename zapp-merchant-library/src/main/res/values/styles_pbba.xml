@@ -64,10 +64,6 @@
         <item name="android:layout_width">@dimen/pbba_popup_container_width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:paddingTop">@dimen/pbba_popup_container_padding_top</item>
-        <item name="android:paddingRight">@dimen/pbba_popup_container_padding_right</item>
-        <item name="android:paddingBottom">@dimen/pbba_popup_container_padding_bottom</item>
-        <item name="android:paddingLeft">@dimen/pbba_popup_container_padding_left</item>
     </style>
 
     <style name="PBBAPopup.Content.Error">

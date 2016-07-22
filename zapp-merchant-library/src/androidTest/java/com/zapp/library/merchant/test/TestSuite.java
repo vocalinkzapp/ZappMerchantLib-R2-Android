@@ -30,6 +30,7 @@ import org.junit.runners.Suite;
  *
  * @author msagi
  */
+@SuppressWarnings("CyclicClassDependency")
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         IsCFIAppAvailableTest.class,
@@ -41,6 +42,26 @@ import org.junit.runners.Suite;
         SetCustomConfigurationTest.class,
 })
 public class TestSuite {
+
+    /**
+     * Assert message.
+     */
+    public static final String ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED = ".onDismissPopupCalled() should not be called";
+
+    /**
+     * Assert message.
+     */
+    public static final String ON_DISMISS_POPUP_CALLED_SHOULD_BE_CALLED = ".onDismissPopupCalled() should be called";
+
+    /**
+     * Assert message.
+     */
+    public static final String ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED = ".onRetryPaymentRequest() should not be called";
+
+    /**
+     * Assert message.
+     */
+    public static final String ON_RETRY_PAYMENT_REQUEST_SHOULD_BE_CALLED = ".onRetryPaymentRequest() should be called";
 
     /**
      * Constant BRN code value.

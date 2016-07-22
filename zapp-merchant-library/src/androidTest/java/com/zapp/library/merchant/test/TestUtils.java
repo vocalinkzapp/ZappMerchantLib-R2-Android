@@ -15,11 +15,7 @@
  */
 package com.zapp.library.merchant.test;
 
-import com.zapp.library.merchant.ui.fragment.PBBAPopup;
-import com.zapp.library.merchant.util.PBBAAppUtils;
-
 import android.app.Activity;
-import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.action.ViewActions;
@@ -28,8 +24,6 @@ import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import android.support.test.runner.lifecycle.Stage;
 import android.support.v4.app.FragmentActivity;
 
-import java.lang.ref.Reference;
-import java.lang.ref.WeakReference;
 import java.util.Collection;
 import java.util.Locale;
 
@@ -45,10 +39,10 @@ public class TestUtils {
         public Wrapper(T object) {
             mObject = object;
         }
-        public T get() {
+        public T getObject() {
             return mObject;
         }
-        public void set(T object) {
+        public void setObject(T object) {
             mObject = object;
         }
     }
@@ -66,7 +60,7 @@ public class TestUtils {
      * @throws InterruptedException If thread synchronisation is interrupted.
      * @return The new activity after orientation change.
      */
-    @SuppressWarnings({"SynchronizationOnLocalVariableOrMethodParameter", "UnconditionalWait", "WaitNotInLoop"})
+    @SuppressWarnings({"SynchronizationOnLocalVariableOrMethodParameter", "UnconditionalWait", "WaitNotInLoop", "SameParameterValue"})
     public static FragmentActivity changeOrientationWithPopup(@NonNull final FragmentActivity activity, final int newOrientation) throws InterruptedException {
         final Object monitor = new Object();
         final Wrapper<FragmentActivity> wrapper = new Wrapper<>(activity);
@@ -86,7 +80,7 @@ public class TestUtils {
                 }
                 final TestActivity landscapeActivity = (TestActivity) activities.iterator().next();
 
-                wrapper.set(landscapeActivity);
+                wrapper.setObject(landscapeActivity);
 
                 synchronized (monitor) {
                     //noinspection NakedNotify
@@ -100,6 +94,6 @@ public class TestUtils {
             monitor.wait(WAIT_TIMEOUT_MS);
         }
 
-        return wrapper.get();
+        return wrapper.getObject();
     }
 }

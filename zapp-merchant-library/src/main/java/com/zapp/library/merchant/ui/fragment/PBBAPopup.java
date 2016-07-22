@@ -142,7 +142,7 @@ public abstract class PBBAPopup extends DialogFragment {
      * @return The {@link PBBAPopupCallback callback}.
      */
     @Nullable
-    protected PBBAPopupCallback getCallback() {
+    PBBAPopupCallback getCallback() {
         return mCallbackWeakReference != null ? mCallbackWeakReference.get() : null;
     }
 

@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@id/pbba_popup_code_container"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <LinearLayout
         style="@style/PBBACode.Group"
-        android:layout_marginRight="@dimen/pbba_popup_code_group_margin_left_right">
+        android:layout_marginRight="@dimen/pbba_popup_code_group_margin_left_right"
+        tools:ignore="RtlHardcoded">
 
         <com.zapp.library.merchant.ui.view.CustomTextView
             android:id="@+id/code_value_1"
@@ -31,7 +32,8 @@
 
     <LinearLayout
         style="@style/PBBACode.Group"
-        android:layout_marginLeft="@dimen/pbba_popup_code_group_margin_left_right">
+        android:layout_marginLeft="@dimen/pbba_popup_code_group_margin_left_right"
+        tools:ignore="RtlHardcoded">
 
         <com.zapp.library.merchant.ui.view.CustomTextView
             android:id="@+id/code_value_4"

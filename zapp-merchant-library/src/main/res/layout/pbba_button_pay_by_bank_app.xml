@@ -21,6 +21,6 @@
         android:layout_marginLeft="@dimen/pbba_button_pay_by_bank_app_textimage_margin_left"
         android:src="@drawable/pbba_pay_by_bank_app_textimage"
         android:tint="@color/pbba_button_foreground_color"
-        tools:ignore="UnusedIds" />
+        tools:ignore="RtlHardcoded,UnusedIds" />
 
 </LinearLayout>

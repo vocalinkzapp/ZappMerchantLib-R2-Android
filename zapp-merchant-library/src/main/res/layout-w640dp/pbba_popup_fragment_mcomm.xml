@@ -11,7 +11,9 @@
         style="@style/PBBAPopup.Content"
         tools:ignore="UnusedIds">
 
-        <include layout="@layout/pbba_popup_section_header" />
+        <include
+            android:id="@id/pbba_popup_header"
+            layout="@layout/pbba_popup_section_header" />
 
         <LinearLayout
             android:id="@+id/pbba_popup_mcom_option_titles_container"
@@ -30,14 +32,16 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:text="@string/pbba_popup_pay_on_this_device_title" />
+                android:text="@string/pbba_popup_pay_on_this_device_title"
+                tools:ignore="RtlHardcoded" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/pbba_popup_vertical_separator_horizontal_margin_left"
                 android:layout_marginRight="@dimen/pbba_popup_vertical_separator_horizontal_margin_right"
-                android:background="@color/pbba_popup_ecomm_vertical_separator_color" />
+                android:background="@color/pbba_popup_ecomm_vertical_separator_color"
+                tools:ignore="RtlHardcoded" />
 
             <com.zapp.library.merchant.ui.view.CustomTextView
                 style="@style/PBBAPopup.EComm.Text.Title"
@@ -46,7 +50,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:text="@string/pbba_popup_pay_with_another_device_title" />
+                android:text="@string/pbba_popup_pay_with_another_device_title"
+                tools:ignore="RtlHardcoded" />
         </LinearLayout>
 
         <LinearLayout
@@ -85,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left"
                         android:text="@string/pbba_popup_open_banking_app_call_to_action"
-                        tools:ignore="UnusedIds" />
+                        tools:ignore="RtlHardcoded,UnusedIds" />
                 </LinearLayout>
 
                 <include
@@ -100,7 +105,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/pbba_popup_vertical_separator_horizontal_margin_left"
                 android:layout_marginRight="@dimen/pbba_popup_vertical_separator_horizontal_margin_right"
-                android:background="@color/pbba_popup_ecomm_vertical_separator_color" />
+                android:background="@color/pbba_popup_ecomm_vertical_separator_color"
+                tools:ignore="RtlHardcoded" />
 
             <LinearLayout
                 android:id="@+id/pbba_popup_code_container"

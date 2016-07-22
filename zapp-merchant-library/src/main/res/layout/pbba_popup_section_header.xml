@@ -16,7 +16,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/pbba_popup_close"
-        android:tint="@color/pbba_popup_foreground_color" />
+        android:tint="@color/pbba_popup_foreground_color"
+        tools:ignore="RtlHardcoded" />
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/pbba_popup_pay_by_bank_app_logo_text"

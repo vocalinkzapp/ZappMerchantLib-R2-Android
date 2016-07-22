@@ -23,7 +23,6 @@ import com.zapp.library.merchant.ui.PBBAPopupCallback;
 import com.zapp.library.merchant.util.PBBAAppUtils;
 import com.zapp.library.merchant.util.PBBALibraryUtils;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -45,11 +44,11 @@ import android.support.test.runner.AndroidJUnit4;
 import android.support.v4.app.FragmentActivity;
 
 /**
- * Instrumented unit tests for PBBAAppUtils class.
+ * Instrumented unit tests for PBBAAppUtils class. Note: run the test with the device in portrait mode, otherwise rotation tests will fail.
  *
  * @author msagi
  */
-@SuppressWarnings({"OverlyBroadThrowsClause", "ProhibitedExceptionDeclared", "InstanceMethodNamingConvention", "ConstantConditions"})
+@SuppressWarnings({"OverlyBroadThrowsClause", "ProhibitedExceptionDeclared", "InstanceMethodNamingConvention", "ConstantConditions", "CyclicClassDependency"})
 @RunWith(AndroidJUnit4.class)
 @SmallTest
 public class ShowPBBAPopupTest {
@@ -67,7 +66,7 @@ public class ShowPBBAPopupTest {
     /**
      * Callback interface for popups.
      */
-    public PBBAPopupCallback mCallback = new PBBAPopupCallback() {
+    private final PBBAPopupCallback mCallback = new PBBAPopupCallback() {
         @Override
         public void onRetryPaymentRequest() {
             mOnRetryPaymentRequestCalled = true;
@@ -79,6 +78,7 @@ public class ShowPBBAPopupTest {
         }
     };
 
+    @SuppressWarnings("PublicField")
     @Rule
     public ActivityTestRule<TestActivity> mActivityTestRule = new ActivityTestRule<>(TestActivity.class, /* initialTouchMode */ true, /* launchActivity */ true);
 
@@ -121,11 +121,11 @@ public class ShowPBBAPopupTest {
     public void testShowPBBAPopupOK() throws Exception {
         final TestActivity activity = mActivityTestRule.getActivity();
         PBBAAppUtils.showPBBAPopup(/* fragmentActivity */ activity, TestSuite.SECURE_TOKEN, TestSuite.BRN, mCallback);
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertFalse(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertFalse(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED, mOnDismissPopupCalled);
         Espresso.onView(ViewMatchers.withId(R.id.pbba_popup_close)).perform(ViewActions.click());
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertTrue(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertTrue(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_BE_CALLED, mOnDismissPopupCalled);
     }
 
     @Test
@@ -147,17 +147,17 @@ public class ShowPBBAPopupTest {
     public void testShowPBBAPopupAndRotateOK() throws Exception {
         final TestActivity activity = mActivityTestRule.getActivity();
         PBBAAppUtils.showPBBAPopup(/* fragmentActivity */ activity, TestSuite.SECURE_TOKEN, TestSuite.BRN, mCallback);
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertFalse(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertFalse(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED, mOnDismissPopupCalled);
 
         final FragmentActivity landscapeActivity = TestUtils.changeOrientationWithPopup(activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //mCallback should be lost due to orientation change
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertFalse(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertFalse(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED, mOnDismissPopupCalled);
         Espresso.onView(ViewMatchers.withId(R.id.pbba_popup_close)).perform(ViewActions.click());
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertFalse(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertFalse(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED, mOnDismissPopupCalled);
 
         landscapeActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -167,8 +167,8 @@ public class ShowPBBAPopupTest {
 
         TestActivity activity = mActivityTestRule.getActivity();
         PBBAAppUtils.showPBBAPopup(/* fragmentActivity */ activity, TestSuite.SECURE_TOKEN, TestSuite.BRN, mCallback);
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertFalse(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertFalse(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED, mOnDismissPopupCalled);
 
         final FragmentActivity landscapeActivity = TestUtils.changeOrientationWithPopup(activity, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //refresh activity reference after orientation change
@@ -176,14 +176,9 @@ public class ShowPBBAPopupTest {
 
         Espresso.onView(ViewMatchers.withId(R.id.pbba_popup_close)).perform(ViewActions.click());
         //mCallback .onDismissPopup should be called after mCallback reconnect
-        Assert.assertFalse(mOnRetryPaymentRequestCalled);
-        Assert.assertTrue(mOnDismissPopupCalled);
+        Assert.assertFalse(TestSuite.ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED, mOnRetryPaymentRequestCalled);
+        Assert.assertTrue(TestSuite.ON_DISMISS_POPUP_CALLED_SHOULD_BE_CALLED, mOnDismissPopupCalled);
 
         landscapeActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
-
-    @After
-    public void tearDown() {
-    }
-
 }

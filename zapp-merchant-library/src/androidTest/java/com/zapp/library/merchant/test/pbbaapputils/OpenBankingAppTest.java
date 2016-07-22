@@ -41,11 +41,12 @@ import android.support.test.runner.AndroidJUnit4;
  *
  * @author msagi
  */
-@SuppressWarnings({"ProhibitedExceptionDeclared", "InstanceMethodNamingConvention", "ConstantConditions", "unused"})
+@SuppressWarnings({"ProhibitedExceptionDeclared", "InstanceMethodNamingConvention", "ConstantConditions", "unused", "CyclicClassDependency"})
 @RunWith(AndroidJUnit4.class)
 @SmallTest
 public class OpenBankingAppTest {
 
+    @SuppressWarnings("PublicField")
     @Rule
     public ActivityTestRule<TestActivity> mActivityTestRule = new ActivityTestRule<>(TestActivity.class, /* initialTouchMode */ true, /* launchActivity */ true);
 

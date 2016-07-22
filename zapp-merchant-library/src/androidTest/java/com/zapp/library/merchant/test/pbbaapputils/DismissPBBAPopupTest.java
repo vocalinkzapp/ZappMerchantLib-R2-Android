@@ -22,7 +22,6 @@ import com.zapp.library.merchant.ui.PBBAPopupCallback;
 import com.zapp.library.merchant.util.PBBAAppUtils;
 import com.zapp.library.merchant.util.PBBALibraryUtils;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -42,7 +41,7 @@ import android.support.test.runner.AndroidJUnit4;
  *
  * @author msagi
  */
-@SuppressWarnings({"OverlyBroadThrowsClause", "ProhibitedExceptionDeclared", "InstanceMethodNamingConvention", "ConstantConditions"})
+@SuppressWarnings({"ProhibitedExceptionDeclared", "InstanceMethodNamingConvention", "ConstantConditions", "CyclicClassDependency"})
 @RunWith(AndroidJUnit4.class)
 @SmallTest
 public class DismissPBBAPopupTest {
@@ -60,7 +59,7 @@ public class DismissPBBAPopupTest {
     /**
      * Callback interface for popups.
      */
-    public PBBAPopupCallback mCallback = new PBBAPopupCallback() {
+    private final PBBAPopupCallback mCallback = new PBBAPopupCallback() {
         @Override
         public void onRetryPaymentRequest() {
             mOnRetryPaymentRequestCalled = true;
@@ -72,6 +71,7 @@ public class DismissPBBAPopupTest {
         }
     };
 
+    @SuppressWarnings("PublicField")
     @Rule
     public ActivityTestRule<TestActivity> mActivityTestRule = new ActivityTestRule<>(TestActivity.class, /* initialTouchMode */ true, /* launchActivity */ true);
 
@@ -107,10 +107,6 @@ public class DismissPBBAPopupTest {
         Assert.assertFalse(mOnRetryPaymentRequestCalled);
         Assert.assertTrue(mOnDismissPopupCalled);
         Assert.assertTrue(isDismissed);
-    }
-
-    @After
-    public void tearDown() {
     }
 
 }

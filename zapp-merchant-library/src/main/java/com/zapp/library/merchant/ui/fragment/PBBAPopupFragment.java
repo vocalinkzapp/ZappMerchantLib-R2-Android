@@ -137,6 +137,7 @@ public final class PBBAPopupFragment extends PBBAPopup {
                 if (activity != null) {
                     PBBALibraryUtils.setOpenBankingAppButtonClicked(getContext(), true);
                     if (PBBAAppUtils.isCFIAppAvailable(activity)) {
+                        dismiss();
                         PBBAAppUtils.openBankingApp(activity, mSecureToken);
                     } else {
                         onDisplayBrn();
@@ -196,7 +197,6 @@ public final class PBBAPopupFragment extends PBBAPopup {
     }
 
     private void onDisplayBrn() {
-        Log.e(TAG, "onDisplayBrn");
         final FragmentActivity activity = getActivity();
         final FragmentManager fragmentManager = activity.getSupportFragmentManager();
         final PBBAPopupFragment newFragment = PBBAPopupFragment.newInstance(mSecureToken, mBrn);

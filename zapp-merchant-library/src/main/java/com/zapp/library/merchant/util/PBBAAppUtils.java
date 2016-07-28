@@ -20,6 +20,7 @@ import com.zapp.library.merchant.ui.fragment.PBBAPopup;
 import com.zapp.library.merchant.ui.fragment.PBBAPopupErrorFragment;
 import com.zapp.library.merchant.ui.fragment.PBBAPopupFragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -103,7 +104,8 @@ public final class PBBAAppUtils {
 
         final Uri zappUri = Uri.parse(String.format(ZAPP_URI_FORMAT_STRING, ZAPP_SCHEME, secureToken));
         final Intent bankingAppStartIntent = new Intent(Intent.ACTION_VIEW, zappUri);
-        if (context.equals(context.getApplicationContext())) {
+        final boolean isActivityContext = context instanceof Activity;
+        if (!isActivityContext) {
             bankingAppStartIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
         context.startActivity(bankingAppStartIntent);
@@ -111,7 +113,7 @@ public final class PBBAAppUtils {
 
     /**
      * Show the Pay by Bank app popup. It opens the CFI App automatically (without displaying the popup) if the device has CFI App installed and the user has tapped
-     * 'Open banking app' button.
+     * 'Open banking app' button. It closes itself automatically if the user taps the 'Open banking app' button. It closes any other Pay by Bank App popup currently open.
      *
      * @param activity    The activity to use.
      * @param secureToken The secure token for the payment.
@@ -184,7 +186,7 @@ public final class PBBAAppUtils {
     }
 
     /**
-     * Show the Pay by Bank app Error Popup.
+     * Show the Pay by Bank app Error Popup. It closes any other Pay by Bank App popup currently open.
      *
      * @param activity     The activity to use.
      * @param errorCode    The error code to display (optional). The error code is appended to the error message in round brackets (e.g. if errorCode is "A12.3" then the

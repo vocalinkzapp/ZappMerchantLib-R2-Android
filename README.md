@@ -1,1 +1,0 @@
-# ZappMerchantLib-R2-Android

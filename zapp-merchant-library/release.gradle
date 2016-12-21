@@ -1,0 +1,55 @@
+// ./gradlew clean build :zapp-merchant-library:generateLibraryRelease
+apply plugin: 'maven'
+
+def localReleaseDest = "${buildDir}/release/${version}"
+
+task javadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+afterEvaluate {
+    javadocs.classpath += files(android.libraryVariants.collect { variant ->
+        //noinspection GroovyUntypedAccess
+        variant.javaCompile.classpath.files
+    })
+}
+
+task javadocsJar(type: Jar, dependsOn: javadocs) {
+    classifier = 'javadoc'
+    from javadocs.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.groupId = project.PUBLISH_GROUP_ID
+        pom.artifactId = project.PUBLISH_ARTIFACT_ID
+        pom.version = project.PUBLISH_VERSION
+        // Add other pom properties here if you want (developer details / licenses)
+        repository(url: "file://${localReleaseDest}")
+    }
+}
+
+task zipRelease(type: Zip) {
+    from localReleaseDest
+    destinationDir buildDir
+    archiveName "release-${project.PUBLISH_VERSION}.zip"
+}
+
+task generateLibraryRelease << {
+    println "Release ${project.PUBLISH_VERSION} can be found at ${localReleaseDest}/"
+    println "Release ${project.PUBLISH_VERSION} zipped can be found ${buildDir}/release-${project.PUBLISH_VERSION}.zip"
+}
+
+generateLibraryRelease.dependsOn(uploadArchives)
+generateLibraryRelease.dependsOn(zipRelease)
+
+artifacts {
+    archives sourcesJar
+    archives javadocsJar
+}

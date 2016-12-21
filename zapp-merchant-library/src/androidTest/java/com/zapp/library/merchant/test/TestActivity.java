@@ -22,7 +22,7 @@ import android.support.v4.app.FragmentActivity;
  *
  * @author msagi
  */
-@SuppressWarnings("EmptyClass")
+@SuppressWarnings({"EmptyClass", "SuperClassHasFrequentlyUsedInheritors"})
 public class TestActivity extends FragmentActivity {
 
 }

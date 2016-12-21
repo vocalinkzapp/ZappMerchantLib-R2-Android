@@ -104,7 +104,7 @@ public final class PBBAAppUtils {
 
         final Uri zappUri = Uri.parse(String.format(ZAPP_URI_FORMAT_STRING, ZAPP_SCHEME, secureToken));
         final Intent bankingAppStartIntent = new Intent(Intent.ACTION_VIEW, zappUri);
-        final boolean isActivityContext = context instanceof Activity;
+        @SuppressWarnings("BooleanVariableAlwaysNegated") final boolean isActivityContext = context instanceof Activity;
         if (!isActivityContext) {
             bankingAppStartIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
@@ -240,7 +240,7 @@ public final class PBBAAppUtils {
      * @see #showPBBAPopup(FragmentActivity, String, String, PBBAPopupCallback)
      * @see #showPBBAErrorPopup(FragmentActivity, String, String, String, PBBAPopupCallback)
      */
-    @SuppressWarnings({"BooleanMethodNameMustStartWithQuestion", "ElementOnlyUsedFromTestCode"})
+    @SuppressWarnings({"BooleanMethodNameMustStartWithQuestion", "ElementOnlyUsedFromTestCode", "UnusedReturnValue"})
     public static boolean setPBBAPopupCallback(@NonNull final FragmentActivity activity, @NonNull final PBBAPopupCallback callback) {
 
         verifyActivity(activity);

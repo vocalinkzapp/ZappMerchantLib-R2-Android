@@ -46,21 +46,25 @@ public class TestSuite {
     /**
      * Assert message.
      */
+    @SuppressWarnings("ConstantNamingConvention")
     public static final String ON_DISMISS_POPUP_CALLED_SHOULD_NOT_BE_CALLED = ".onDismissPopupCalled() should not be called";
 
     /**
      * Assert message.
      */
+    @SuppressWarnings("ConstantNamingConvention")
     public static final String ON_DISMISS_POPUP_CALLED_SHOULD_BE_CALLED = ".onDismissPopupCalled() should be called";
 
     /**
      * Assert message.
      */
+    @SuppressWarnings("ConstantNamingConvention")
     public static final String ON_RETRY_PAYMENT_REQUEST_SHOULD_NOT_BE_CALLED = ".onRetryPaymentRequest() should not be called";
 
     /**
      * Assert message.
      */
+    @SuppressWarnings("ConstantNamingConvention")
     public static final String ON_RETRY_PAYMENT_REQUEST_SHOULD_BE_CALLED = ".onRetryPaymentRequest() should be called";
 
     /**
@@ -73,6 +77,12 @@ public class TestSuite {
      * Constant (invalid: not 6 characters long) BRN code value.
      */
     public static final String INVALID_BRN = "BRN";
+
+    /**
+     * Constant with another valid BRN code value.
+     */
+    @SuppressWarnings("ConstantNamingConvention")
+    public static final String BRN2 = "BRN--2";
 
     /**
      * Constant secure token value.

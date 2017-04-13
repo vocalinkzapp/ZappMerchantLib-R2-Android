@@ -47,6 +47,7 @@ public final class PBBALibraryUtils {
     /**
      * The Pay by Bank app theme custom configuration key.
      */
+    @SuppressWarnings("WeakerAccess")
     public static final String KEY_PBBA_THEME = "pbbaTheme";
 
     /**
@@ -67,6 +68,7 @@ public final class PBBALibraryUtils {
     /**
      * The default value for Pay by Bank app theme.
      */
+    @SuppressWarnings("WeakerAccess")
     public static final int PBBA_THEME_DEFAULT_VALUE = PBBA_THEME_STANDARD;
 
     /**
@@ -91,7 +93,7 @@ public final class PBBALibraryUtils {
      *
      * @param properties The custom configuration to use.
      */
-    @SuppressWarnings({"MethodMayBeSynchronized", "ElementOnlyUsedFromTestCode"})
+    @SuppressWarnings({"MethodMayBeSynchronized", "ElementOnlyUsedFromTestCode", "SameParameterValue"})
     public static void setCustomConfiguration(@NonNull final Properties properties) {
         synchronized (PBBALibraryUtils.class) {
             //noinspection ConstantConditions

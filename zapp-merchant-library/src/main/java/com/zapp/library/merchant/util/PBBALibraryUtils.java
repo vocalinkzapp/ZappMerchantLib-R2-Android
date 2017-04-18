@@ -47,8 +47,12 @@ public final class PBBALibraryUtils {
     /**
      * The Pay by Bank app theme custom configuration key.
      */
-    @SuppressWarnings("WeakerAccess")
     public static final String KEY_PBBA_THEME = "pbbaTheme";
+
+    /**
+     * The Pay by Bank app theme custom configuration key.
+     */
+    public static final String KEY_CFI_APP_NAME = "cfiAppName";
 
     /**
      * Standard PBBA theme value.
@@ -68,8 +72,22 @@ public final class PBBALibraryUtils {
     /**
      * The default value for Pay by Bank app theme.
      */
-    @SuppressWarnings("WeakerAccess")
     public static final int PBBA_THEME_DEFAULT_VALUE = PBBA_THEME_STANDARD;
+
+    /**
+     * The value identifier for PBBA app name.
+     */
+    public static final int CFI_APP_NAME_PBBA = 1;
+
+    /**
+     * The value identifier for Pingit app name.
+     */
+    public static final int CFI_APP_NAME_PINGIT = 2;
+
+    /**
+     * The default value identifier for CFI app name.
+     */
+    public static final int CFI_APP_NAME_DEFAULT = CFI_APP_NAME_PBBA;
 
     /**
      * Constant for banking app button clicked shared preferences key.
@@ -93,7 +111,7 @@ public final class PBBALibraryUtils {
      *
      * @param properties The custom configuration to use.
      */
-    @SuppressWarnings({"MethodMayBeSynchronized", "ElementOnlyUsedFromTestCode", "SameParameterValue"})
+    @SuppressWarnings({"MethodMayBeSynchronized", "ElementOnlyUsedFromTestCode"})
     public static void setCustomConfiguration(@NonNull final Properties properties) {
         synchronized (PBBALibraryUtils.class) {
             //noinspection ConstantConditions
@@ -103,14 +121,7 @@ public final class PBBALibraryUtils {
         }
     }
 
-    /**
-     * Get the Pay by Bank app theme setting.
-     *
-     * @param context The context to use.
-     * @return The theme value.
-     */
-    public static int getPbbaTheme(@NonNull final Context context) {
-        String pbbaThemeValue;
+    private static Properties getCustomConfiguration(@NonNull Context context) {
         synchronized (PBBALibraryUtils.class) {
             if (sCustomConfiguration == null) {
                 sCustomConfiguration = new Properties();
@@ -123,8 +134,19 @@ public final class PBBALibraryUtils {
                     //nothing to do here
                 }
             }
-            pbbaThemeValue = sCustomConfiguration.getProperty(KEY_PBBA_THEME);
         }
+        return sCustomConfiguration;
+    }
+
+    /**
+     * Get the Pay by Bank app theme setting.
+     *
+     * @param context The context to use.
+     * @return The theme value.
+     */
+    public static int getPbbaTheme(@NonNull final Context context) {
+
+        final String pbbaThemeValue = getCustomConfiguration(context).getProperty(KEY_PBBA_THEME);
 
         try {
             int theme = Integer.parseInt(pbbaThemeValue);
@@ -136,6 +158,22 @@ public final class PBBALibraryUtils {
             }
         } catch (NumberFormatException ignored) {
             return PBBA_THEME_DEFAULT_VALUE;
+        }
+    }
+
+    /**
+     * Get the CFI app name value identifier.
+     *
+     * @param context The context to use.
+     * @return The CFI app name value identifier.
+     */
+    public static int getCfiAppName(@NonNull final Context context) {
+        final String cfiAppNameValue = getCustomConfiguration(context).getProperty(KEY_CFI_APP_NAME);
+
+        try {
+            return Integer.parseInt(cfiAppNameValue);
+        } catch (NumberFormatException ignored) {
+            return CFI_APP_NAME_DEFAULT;
         }
     }
 
@@ -154,7 +192,7 @@ public final class PBBALibraryUtils {
      * Set the open banking app button clicked flag in shared preferences.
      *
      * @param context The context to use.
-     * @param value The new flag value.
+     * @param value   The new flag value.
      */
     public static void setOpenBankingAppButtonClicked(@NonNull final Context context, final boolean value) {
         final SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(BANKING_APP_BTN_CLICKED, value);

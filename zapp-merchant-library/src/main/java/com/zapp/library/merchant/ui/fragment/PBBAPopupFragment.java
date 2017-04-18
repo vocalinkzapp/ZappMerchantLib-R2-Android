@@ -15,11 +15,6 @@
  */
 package com.zapp.library.merchant.ui.fragment;
 
-import com.zapp.library.merchant.R;
-import com.zapp.library.merchant.ui.PBBAPopupCallback;
-import com.zapp.library.merchant.util.PBBAAppUtils;
-import com.zapp.library.merchant.util.PBBALibraryUtils;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -28,11 +23,18 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.zapp.library.merchant.R;
+import com.zapp.library.merchant.ui.PBBAPopupCallback;
+import com.zapp.library.merchant.ui.view.CustomTextView;
+import com.zapp.library.merchant.util.PBBAAppUtils;
+import com.zapp.library.merchant.util.PBBALibraryUtils;
+
+import static com.zapp.library.merchant.util.PBBALibraryUtils.CFI_APP_NAME_DEFAULT;
 
 /**
  * Popup fragment for Zapp electronic and mobile commerce (e-Comm and m-Comm) journeys.
@@ -109,6 +111,34 @@ public final class PBBAPopupFragment extends PBBAPopup {
             onCreateECommView(content);
         }
 
+        final boolean useDefaultCfiAppName = PBBALibraryUtils.getCfiAppName(getContext()) == CFI_APP_NAME_DEFAULT;
+
+        final String cfiAppName = useDefaultCfiAppName ? getString(R.string.pbba_name) : getString(R.string.pingit);
+
+        CustomTextView openBankingAppCallToAction = (CustomTextView) content.findViewById(R.id.pbba_popup_open_banking_app_call_to_action);
+        if (openBankingAppCallToAction != null) {
+            openBankingAppCallToAction.setText(getString(R.string.pbba_popup_open_banking_app_call_to_action, cfiAppName));
+        }
+
+        CustomTextView payWithAnotherDeviceCallToAction = (CustomTextView) content.findViewById(R.id.pbba_popup_pay_with_another_device_call_to_action);
+        if (payWithAnotherDeviceCallToAction != null) {
+            payWithAnotherDeviceCallToAction.setText(getString(R.string.pbba_popup_pay_with_another_device_call_to_action, cfiAppName));
+        }
+
+        CustomTextView popupEcomItemTwoText = (CustomTextView) content.findViewById(R.id.pbba_popup_ecom_item_two_text);
+        if (popupEcomItemTwoText != null) {
+            popupEcomItemTwoText.setHtmlText(getString(R.string.pbba_popup_ecomm_item_two_text, cfiAppName));
+        }
+
+        final TextView openBankingAppButtonTitle = (TextView) content.findViewById(R.id.pbba_button_open_banking_app_text);
+        if (openBankingAppButtonTitle != null) {
+            if (useDefaultCfiAppName) {
+                openBankingAppButtonTitle.setText(getString(R.string.pbba_button_text_open_banking_app));
+            } else {
+                openBankingAppButtonTitle.setText(getString(R.string.pbba_button_text_open_banking_app_co_branded));
+            }
+        }
+
         //note: 'What is Pay by Bank app' link is set up in the parent class
 
         return content;
@@ -145,23 +175,6 @@ public final class PBBAPopupFragment extends PBBAPopup {
                 }
             }
         });
-
-        final int pbbaTheme = PBBALibraryUtils.getPbbaTheme(getContext());
-
-        final TextView buttonTitle = (TextView) openBankingAppButton.findViewById(R.id.pbba_button_open_banking_app_text);
-        switch (pbbaTheme) {
-            case PBBALibraryUtils.PBBA_THEME_STANDARD:
-                buttonTitle.setText(getString(R.string.pbba_button_text_open_banking_app));
-                break;
-            case PBBALibraryUtils.PBBA_THEME_PINGIT_LIGHT:
-            case PBBALibraryUtils.PBBA_THEME_PINGIT_DARK:
-                buttonTitle.setText(getString(R.string.pbba_button_text_open_banking_app_co_branded));
-                break;
-            default:
-                //nothing to do here as input validation happens during configuration file loading
-                Log.w(PBBALibraryUtils.PBBA_LOG_TAG, String.format("Unknown Pay by Bank app theme configuration: theme: %d", pbbaTheme));
-                break;
-        }
 
         final View getCodeButton = view.findViewById(R.id.pbba_button_get_code);
         if (getCodeButton != null) {

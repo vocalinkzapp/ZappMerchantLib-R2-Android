@@ -15,17 +15,18 @@
  */
 package com.zapp.library.merchant.ui.view;
 
-import com.zapp.library.merchant.R;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
+
+import com.zapp.library.merchant.R;
 
 /**
  * Custom text view for the Pay by Bank app popups.
@@ -84,17 +85,26 @@ public class CustomTextView extends TextView {
             setTypeface(customFont);
 
             final String htmlText = a.getString(R.styleable.CustomTextView_htmlText);
-            if (!TextUtils.isEmpty(htmlText)) {
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY));
-                } else {
-                    //noinspection deprecation
-                    setText(Html.fromHtml(htmlText));
-                }
-            }
+            setHtmlText(htmlText);
         } finally {
             a.recycle();
+        }
+    }
+
+    /**
+     * Sets the string value of the TextView and applies the html format provided in the string.
+     *
+     * @param htmlText Text which contains html tags.
+     */
+    public void setHtmlText(@Nullable final String htmlText) {
+        if (!TextUtils.isEmpty(htmlText)) {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_LEGACY));
+            } else {
+                //noinspection deprecation
+                setText(Html.fromHtml(htmlText));
+            }
         }
     }
 }

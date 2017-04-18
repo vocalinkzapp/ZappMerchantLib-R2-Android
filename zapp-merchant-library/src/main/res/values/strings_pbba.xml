@@ -13,19 +13,23 @@
     <string name="pbba_button_text_open_banking_app_co_branded">Open Pingit</string>
     <string name="pbba_button_text_get_code_pre">Get\u0020\u0020</string>
 
+    <!--CFI app name-->
+    <string name="pingit">Pingit</string>
+    <string name="pbba_name">your mobile banking app</string>
+
     <!-- Pay by Bank app popup texts -->
     <string name="pbba_popup_what_is_pay_by_bank_app">What is Pay by Bank app? \u2192</string>
 
     <string name="pbba_popup_pay_on_this_device_title">Pay on this device</string>
-    <string name="pbba_popup_open_banking_app_call_to_action">Tap the button below to open your mobile banking app and log in to complete your purchase</string>
+    <string name="pbba_popup_open_banking_app_call_to_action">Tap the button below to open %s and log in to complete your purchase</string>
     <string name="pbba_popup_pay_with_another_device_title">Pay with another device</string>
-    <string name="pbba_popup_pay_with_another_device_call_to_action">Tap the button below if your mobile banking app is on another device</string>
+    <string name="pbba_popup_pay_with_another_device_call_to_action">Tap the button below if %s is on another device</string>
 
     <string name="pbba_popup_no_bank_app_message">None of the apps on this device currently support Pay by Bank app.</string>
     <string name="pbba_popup_submit_code_title">Follow the steps below to complete this purchase on another device:</string>
 
     <string name="pbba_popup_ecomm_item_one_text"><![CDATA[<b>Pick</b> up your phone or tablet]]></string>
-    <string name="pbba_popup_ecomm_item_two_text"><![CDATA[<b>Log in</b> to your mobile banking app]]></string>
+    <string name="pbba_popup_ecomm_item_two_text"><![CDATA[<b>Log in</b> to %s]]></string>
     <string name="pbba_popup_ecomm_item_three_text"><![CDATA[<b>Select</b> Pay by Bank app]]></string>
     <string name="pbba_popup_ecomm_item_four_text_one"><![CDATA[<b>Enter</b> the]]></string>
     <string name="pbba_popup_ecomm_item_four_text_two">\u0020below</string>

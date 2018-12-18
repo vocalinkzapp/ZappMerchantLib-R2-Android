@@ -15,11 +15,6 @@
  */
 package com.zapp.library.merchant.util;
 
-import com.zapp.library.merchant.ui.PBBAPopupCallback;
-import com.zapp.library.merchant.ui.fragment.PBBAPopup;
-import com.zapp.library.merchant.ui.fragment.PBBAPopupErrorFragment;
-import com.zapp.library.merchant.ui.fragment.PBBAPopupFragment;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +28,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
+import android.util.Log;
+
+import com.zapp.library.merchant.BuildConfig;
+import com.zapp.library.merchant.ui.PBBAPopupCallback;
+import com.zapp.library.merchant.ui.fragment.PBBAPopup;
+import com.zapp.library.merchant.ui.fragment.PBBAPopupErrorFragment;
+import com.zapp.library.merchant.ui.fragment.PBBAPopupFragment;
 
 /**
  * Utility class which provides API for the Merchant App developers.
@@ -101,7 +103,6 @@ public final class PBBAAppUtils {
         if (TextUtils.isEmpty(secureToken)) {
             throw new IllegalArgumentException("secureToken is required");
         }
-
         final Uri zappUri = Uri.parse(String.format(ZAPP_URI_FORMAT_STRING, ZAPP_SCHEME, secureToken));
         final Intent bankingAppStartIntent = new Intent(Intent.ACTION_VIEW, zappUri);
         @SuppressWarnings("BooleanVariableAlwaysNegated") final boolean isActivityContext = context instanceof Activity;
@@ -126,7 +127,7 @@ public final class PBBAAppUtils {
      */
     @SuppressWarnings({"FeatureEnvy", "OverlyComplexMethod", "OverlyLongMethod", "ElementOnlyUsedFromTestCode"})
     public static void showPBBAPopup(@NonNull final FragmentActivity activity, @NonNull final String secureToken, @NonNull final String brn,
-            @NonNull final PBBAPopupCallback callback) {
+                                     @NonNull final PBBAPopupCallback callback) {
 
         verifyActivity(activity);
 
@@ -201,7 +202,7 @@ public final class PBBAAppUtils {
      */
     @SuppressWarnings("ElementOnlyUsedFromTestCode")
     public static void showPBBAErrorPopup(@NonNull final FragmentActivity activity, @Nullable String errorCode, @Nullable String errorTitle,
-            @NonNull final String errorMessage, @NonNull final PBBAPopupCallback callback) {
+                                          @NonNull final String errorMessage, @NonNull final PBBAPopupCallback callback) {
 
         verifyActivity(activity);
 

@@ -50,7 +50,7 @@ public final class PBBALibraryUtils {
     public static final String KEY_PBBA_THEME = "pbbaTheme";
 
     /**
-     * The Pay by Bank app theme custom configuration key.
+     * The Pay by Bank app cfi app name configuration key.
      */
     public static final String KEY_CFI_APP_NAME = "cfiAppName";
 
@@ -78,11 +78,6 @@ public final class PBBALibraryUtils {
      * The value identifier for PBBA app name.
      */
     public static final int CFI_APP_NAME_PBBA = 1;
-
-    /**
-     * The value identifier for Pingit app name.
-     */
-    public static final int CFI_APP_NAME_PINGIT = 2;
 
     /**
      * The default value identifier for CFI app name.
